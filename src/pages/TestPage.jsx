@@ -15,7 +15,7 @@ export function TestPage({Start, setStart, questions, answersResult, trueAnswers
     const [min, setMin] = useState(0);
     const [sec, setSec] =useState(0);
 
-    let res = JSON.parse(sessionStorage.getItem('answersResult')) || null;
+    answersResult = JSON.parse(sessionStorage.getItem('answersResult')) || 0;
 
     let answers = (value,index)=>{
         ANSWERS[index] = value;
@@ -31,7 +31,8 @@ export function TestPage({Start, setStart, questions, answersResult, trueAnswers
 
         if(Start){
           if(time === 0 && min === 0 && sec === 0){
-            alert('ձեր')
+            alert('ձեր ժամանակը սպառվեց')
+            TimerEnd();
             return
           }else{
             const interval = setInterval(() => {
@@ -51,37 +52,85 @@ export function TestPage({Start, setStart, questions, answersResult, trueAnswers
           return () => clearInterval(interval);
           }
         }else{
+            sessionStorage.clear();
             navigate('/');
         }
         
-      }, [sec])
+      }, [sec]);
+
+
+      const TimerEnd = async()=>{
+        let UserData = await axios.get(`http://localhost:8000/user/${id}`);
+        let res ={}
+        for(let key in UserData.data){
+          if(key != 'id'){
+            res[key] = UserData.data[key];
+          }
+        }
+        for(let i = 0; i<ANSWERS.length; i++){
+            if(ANSWERS[i] === trueAnswers[i]){
+                answersResult++;
+            }
+        }
+        res.point = JSON.stringify(answersResult);
+
+        if(answersResult > 0)
+        sessionStorage.setItem('answersResult', JSON.stringify(answersResult));
+
+        let user = res;
+
+        try{
+          let UserById = await axios.put(`http://localhost:8000/user/edit/${id}`, user, {
+            headers: {'Content-Type': 'application/json'},
+            withCredentials: true
+          });
+        }catch(err){
+          console.log(err.response);
+        }
+        setEnd(true);
+        window.scroll({ top: 0 })
+      }
 
 
         
 
     const submitHandler = async(e)=>{
         e.preventDefault();
-        let UserData = await axios.get(`https://test-backend-sigma.vercel.app/users${id}`);
-        let res = UserData.data;
+
+        let UserData = await axios.get(`http://localhost:8000/user/${id}`);
+        let res ={}
+        for(let key in UserData.data){
+          if(key != 'id'){
+            res[key] = UserData.data[key];
+          }
+        }
         for(let i = 0; i<ANSWERS.length; i++){
             if(ANSWERS[i] === trueAnswers[i]){
                 answersResult++;
             }
         }
-        res.points = answersResult;
+        res.point = JSON.stringify(answersResult);
 
-        sessionStorage.setItem('answersResult', JSON.stringify(answersResult))
+        if(answersResult > 0)
+        sessionStorage.setItem('answersResult', JSON.stringify(answersResult));
+
         let user = res;
 
-        await axios.put(`https://test-backend-sigma.vercel.app/users${id}`, user);
-
+        try{
+          let UserById = await axios.put(`http://localhost:8000/user/edit/${id}`, user, {
+            headers: {'Content-Type': 'application/json'},
+            withCredentials: true
+          });
+        }catch(err){
+          console.log(err.response);
+        }
         setEnd(true);
-
+        window.scroll({ top: 0 })
     }
 
   return (
     <div>
-        {end ? <EndTest trueAnswers={trueAnswers} res={res} questions={questions} answers={answers} ANSWERS={ANSWERS}  />
+        {end ? <EndTest trueAnswers={trueAnswers} answersResult={answersResult} questions={questions} answers={answers} ANSWERS={ANSWERS}  />
         :
         <StartTest time={time} min={min} sec={sec} submitHandler={submitHandler} questions={questions} answers={answers} />}
     </div>

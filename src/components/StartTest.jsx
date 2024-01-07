@@ -12,9 +12,15 @@ export default function StartTest({time, min, sec, submitHandler, questions, ans
             <form className=" box w-[100%]" onSubmit={submitHandler}>
             {
                 questions.map((el, index) => <div className=' question' key={index}>
+                    {el.image ? <div>
+                      <h2>{index+1}.{el.question}</h2>
+                      <img src={el.image} alt="" />
+                      
+                    </div>:
                     <h2 className=''>
                         {index+1}.{el.question}
                     </h2>
+                    }
 
                     <div>
                         <input type="radio" name={index} id={el.option1} value={el.option1} onClick={()=> answers(el.option1, index)} />

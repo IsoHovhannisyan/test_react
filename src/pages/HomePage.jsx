@@ -11,17 +11,16 @@ export function HomePage({ setStart, email, setEmail}) {
     const [name, setName] = useState('');
     const [surname, setSurname] = useState('');
     const [phone, setPhone] = useState('');
-    const [userId, setUserId] = useState(1);
 
 
     const loadingUsers = async()=>{
-        let Users = await axios.get("https://test-backend-sigma.vercel.app/users");
-        setUserId(Users.data.length + 1)
+        let Users = await axios.get("http://localhost:8000/user");
         setUsers(Users.data);    
     }
 
     useEffect(()=> {
         loadingUsers();
+        
     },[])
 
     
@@ -29,27 +28,38 @@ export function HomePage({ setStart, email, setEmail}) {
   
     const submitHandler = async(e)=>{
         e.preventDefault();
+        let UserId = 0
         if(!name || !surname || !phone || !email){
             alert('Լրացրեք բոլոր դաշտերը ')
             return
         }else{
+            let res = {
+              name: name,
+              surname: surname,
+              phone: phone,
+              email: email,
+              point: '0'
+            }
             let userWithSuchEmail = users.filter(el=> el.email == email);
             if(userWithSuchEmail.length > 0){
                 alert(' այս էլ․ փոստ-ով դիմորդ գոյություն ունի');
                 return
             }
-            await axios.post('https://test-backend-sigma.vercel.app/users', {
-                name,
-                surname,
-                phone,
-                email,
-                points: 0
-            })
+           
+            try{
+              UserId = await axios.post("http://localhost:8000/user/add", res,{
+                headers: {'Content-Type': 'application/json'},
+                withCredentials: true
+              })
+            }catch(err){
+              console.log(err.response);
+            }
+           
         }
       setStart(true);
 
       setEmail('')
-      navigate('/test/'+ userId)
+      navigate('/test/'+ UserId.data)
     }
   
   

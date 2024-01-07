@@ -80,7 +80,17 @@ export function App() {
         option3: 2,
         option4: 5,
         answer: 4
-    }
+    },
+    {
+      question: "	Ճանճը ունի 6 ոտք, սարդը՝ 8 ոտք:3 ճանճը և 2 սարդը միասին ունեն այնքան ոտք, որքան ոտք ունեն 9 հավ և ...:",
+      image: "https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit,dpr_2/cdn/53154f67-a246-4251-8906-5b50e294e1cb/3da65589-0a00-4446-8e2b-bca1f4524b67.jpg",
+      option1: "3 կատուն",
+      option2: "6 կատուն",
+      option3: "4 կատուն",
+      option4: "2 կատուն",
+      answer: "4 կատուն"
+  }
+
 
   ]);
   const questions = [];
@@ -90,7 +100,7 @@ export function App() {
   
   let arr = [];
 
-for(let i = 0; arr.length < randQuestions.length; i++ ){
+for(let i = 0; arr.length < 10; i++ ){
   let res = randomQuestions(0, randQuestions.length - 1);
   if(!arr.includes(res))
   arr.push(res);
