@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "name": "ssdd",
+      "surname": "442",
+      "phone": "123",
+      "email": "111@aa",
+      "points": 0,
+      "id": 1
+    },
+    {
+      "name": "rr",
+      "surname": "242",
+      "phone": "5551",
+      "email": "aasd@aa",
+      "points": 1,
+      "id": 2
+    },
+    {
+      "name": "sss",
+      "surname": "4421",
+      "phone": "5511",
+      "email": "AAA@S",
+      "points": 2,
+      "id": 3
+    },
+    {
+      "name": "sss",
+      "surname": "4212",
+      "phone": "555",
+      "email": "aaa@fdsaf",
+      "points": 4,
+      "id": 4
+    },
+    {
+      "name": "sss",
+      "surname": "42123",
+      "phone": "66543",
+      "email": "1233@aa",
+      "points": 3,
+      "id": 5
+    },
+    {
+      "name": "Iso",
+      "surname": "Hovhannisyan",
+      "phone": "12321412",
+      "email": "asdsad@mail.ru",
+      "points": 1,
+      "id": 6
+    }
+  ]
+}
