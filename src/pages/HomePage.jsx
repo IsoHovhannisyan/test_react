@@ -10,7 +10,7 @@ export function HomePage({ setStart, email, setEmail}) {
     const [users, setUsers] = useState([]);
     const [name, setName] = useState('');
     const [surname, setSurname] = useState('');
-    const [phone, setPhone] = useState('');
+    const [phone, setPhone] = useState(''); 
 
 
     const loadingUsers = async()=>{
