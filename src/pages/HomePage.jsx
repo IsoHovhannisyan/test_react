@@ -15,14 +15,9 @@ export function HomePage({ setStart, email, setEmail}) {
 
 
     const loadingUsers = async()=>{
-      try{
         let Users = await axios.get("https://test-backend-sigma.vercel.app/users");
         setUserId(Users.data.length + 1)
-        setUsers(Users.data);
-      }catch(err){
-
-      }
-        
+        setUsers(Users.data);    
     }
 
     useEffect(()=> {
