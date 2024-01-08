@@ -52,8 +52,9 @@ export function TestPage({Start, setStart, questions, answersResult, trueAnswers
           return () => clearInterval(interval);
           }
         }else{
-            sessionStorage.clear();
+            alert('aaaa')
             TimerEnd();
+            sessionStorage.clear();
             navigate('/');
         }
         
