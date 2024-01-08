@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { Toaster, toast} from 'react-hot-toast';
 import axios from "axios";
 
 export function HomePage({ setStart, email, setEmail}) {
@@ -28,9 +29,10 @@ export function HomePage({ setStart, email, setEmail}) {
   
     const submitHandler = async(e)=>{
         e.preventDefault();
+        toast.loading('Sending Request', {id: 1});
         let UserId = 0
         if(!name || !surname || !phone || !email){
-            alert('Լրացրեք բոլոր դաշտերը ')
+            toast.error('Լրացրեք բոլոր դաշտերը', {id: 1});
             return
         }else{
             let res = {
@@ -42,7 +44,7 @@ export function HomePage({ setStart, email, setEmail}) {
             }
             let userWithSuchEmail = users.filter(el=> el.email == email);
             if(userWithSuchEmail.length > 0){
-                alert(' այս էլ․ փոստ-ով դիմորդ գոյություն ունի');
+                toast.error('Այս էլ․ փոստ-ով արդեն գրանցվել են', {id: 1});
                 return
             }
            
@@ -51,7 +53,9 @@ export function HomePage({ setStart, email, setEmail}) {
                 headers: {'Content-Type': 'application/json'},
                 withCredentials: true
               })
+              toast.success('Success', {id: 1});
             }catch(err){
+              toast.error('Ինչ-որ բան սխալ է', {id: 1});
               console.log(err.response);
             }
            
@@ -65,6 +69,7 @@ export function HomePage({ setStart, email, setEmail}) {
   
     return (
       <div className='HomePage'>
+        <Toaster />
         {
           <div className=' register'>
               <form className=' bg-slate-300 p-[1rem] w-[400px]' onSubmit={submitHandler}>

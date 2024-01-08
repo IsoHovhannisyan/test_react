@@ -61,3 +61,19 @@ label{
   font-size: 1.5rem;
   margin-left: 1rem;
 }
+
+.Link{
+  color: blue;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.Link:hover{
+  color: brown;
+  text-decoration: underline;
+}
+
+thead, tr, th,td{
+  border: solid 1px black;
+  padding: .5rem, 1rem;
+}

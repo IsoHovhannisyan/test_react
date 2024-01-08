@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import StartTest from "../components/StartTest";
 import EndTest from "../components/EndTest";
+import { Toaster, toast} from 'react-hot-toast';
 
 export function TestPage({Start, setStart, questions, answersResult, trueAnswers, ANSWERS}) {
 
@@ -51,9 +52,7 @@ export function TestPage({Start, setStart, questions, answersResult, trueAnswers
           }, 1000);
           return () => clearInterval(interval);
           }
-        }else{
-            alert('aaaa')
-            TimerEnd();
+        }else{ 
             sessionStorage.clear();
             navigate('/');
         }
@@ -62,6 +61,7 @@ export function TestPage({Start, setStart, questions, answersResult, trueAnswers
 
 
       const TimerEnd = async()=>{
+        toast.loading('Sending Request', {id: 1});
         let UserData = await axios.get(`https://test-backend-nodejs.vercel.app/user/${id}`);
         let res ={}
         for(let key in UserData.data){
@@ -87,10 +87,12 @@ export function TestPage({Start, setStart, questions, answersResult, trueAnswers
             withCredentials: true
           });
         }catch(err){
-          console.log(err.response);
+
+          toast.error('Ինչ-որ բան սխալ է', {id: 1});
         }
         setEnd(true);
         window.scroll({ top: 0 })
+        toast.success('Success', {id: 1});
       }
 
 
@@ -98,7 +100,7 @@ export function TestPage({Start, setStart, questions, answersResult, trueAnswers
 
     const submitHandler = async(e)=>{
         e.preventDefault();
-
+        toast.loading('Sending Request', {id: 1});
         let UserData = await axios.get(`https://test-backend-nodejs.vercel.app/user/${id}`);
         let res ={}
         for(let key in UserData.data){
@@ -124,14 +126,17 @@ export function TestPage({Start, setStart, questions, answersResult, trueAnswers
             withCredentials: true
           });
         }catch(err){
-          console.log(err.response);
+
+          toast.error('Ինչ-որ բան սխալ է', {id: 1});
         }
         setEnd(true);
         window.scroll({ top: 0 })
+        toast.success('Success', {id: 1});
     }
 
   return (
     <div>
+        <Toaster />
         {end ? <EndTest trueAnswers={trueAnswers} answersResult={answersResult} questions={questions} answers={answers} ANSWERS={ANSWERS}  />
         :
         <StartTest time={time} min={min} sec={sec} submitHandler={submitHandler} questions={questions} answers={answers} />}
