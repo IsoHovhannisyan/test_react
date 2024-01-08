@@ -53,6 +53,7 @@ export function TestPage({Start, setStart, questions, answersResult, trueAnswers
           }
         }else{
             sessionStorage.clear();
+            TimerEnd();
             navigate('/');
         }
         
