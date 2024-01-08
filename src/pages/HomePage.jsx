@@ -14,7 +14,7 @@ export function HomePage({ setStart, email, setEmail}) {
 
 
     const loadingUsers = async()=>{
-        let Users = await axios.get("http://localhost:8000/user");
+        let Users = await axios.get("https://test-backend-nodejs.vercel.app/user");
         setUsers(Users.data);    
     }
 
@@ -47,7 +47,7 @@ export function HomePage({ setStart, email, setEmail}) {
             }
            
             try{
-              UserId = await axios.post("http://localhost:8000/user/add", res,{
+              UserId = await axios.post("https://test-backend-nodejs.vercel.app/user/add", res,{
                 headers: {'Content-Type': 'application/json'},
                 withCredentials: true
               })

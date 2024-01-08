@@ -60,7 +60,7 @@ export function TestPage({Start, setStart, questions, answersResult, trueAnswers
 
 
       const TimerEnd = async()=>{
-        let UserData = await axios.get(`http://localhost:8000/user/${id}`);
+        let UserData = await axios.get(`https://test-backend-nodejs.vercel.app/user/${id}`);
         let res ={}
         for(let key in UserData.data){
           if(key != 'id'){
@@ -80,7 +80,7 @@ export function TestPage({Start, setStart, questions, answersResult, trueAnswers
         let user = res;
 
         try{
-          let UserById = await axios.put(`http://localhost:8000/user/edit/${id}`, user, {
+          let UserById = await axios.put(`https://test-backend-nodejs.vercel.app/user/edit/${id}`, user, {
             headers: {'Content-Type': 'application/json'},
             withCredentials: true
           });
@@ -97,7 +97,7 @@ export function TestPage({Start, setStart, questions, answersResult, trueAnswers
     const submitHandler = async(e)=>{
         e.preventDefault();
 
-        let UserData = await axios.get(`http://localhost:8000/user/${id}`);
+        let UserData = await axios.get(`https://test-backend-nodejs.vercel.app/user/${id}`);
         let res ={}
         for(let key in UserData.data){
           if(key != 'id'){
@@ -117,7 +117,7 @@ export function TestPage({Start, setStart, questions, answersResult, trueAnswers
         let user = res;
 
         try{
-          let UserById = await axios.put(`http://localhost:8000/user/edit/${id}`, user, {
+          let UserById = await axios.put(`https://test-backend-nodejs.vercel.app/user/edit/${id}`, user, {
             headers: {'Content-Type': 'application/json'},
             withCredentials: true
           });
