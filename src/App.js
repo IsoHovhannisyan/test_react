@@ -92,6 +92,15 @@ export function App() {
     answer: "4 կատուն"
     }],
     test2: [{
+      question: "	Ճանճը ունի 6 ոտք, սարդը՝ 8 ոտք:3 ճանճը և 2 սարդը միասին ունեն այնքան ոտք, որքան ոտք ունեն 9 հավ և ...:",
+      image: "https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit,dpr_2/cdn/53154f67-a246-4251-8906-5b50e294e1cb/3da65589-0a00-4446-8e2b-bca1f4524b67.jpg",
+      option1: "3 կատուն",
+      option2: "6 կատուն",
+      option3: "4 կատուն",
+      option4: "2 կատուն",
+      answer: "4 կատուն"
+      },
+      {
       question: "	For her calculus class, Marie has scored 80, 85, and 100 on three of her tests so far. What is the minimum score Marie needs to receive on her 4th test in order to have an average of  89․",
       option1: 98,
       option2: 87,
@@ -162,16 +171,7 @@ export function App() {
       option3: 2,
       option4: 5,
       answer: 4
-  },
-  {
-    question: "	Ճանճը ունի 6 ոտք, սարդը՝ 8 ոտք:3 ճանճը և 2 սարդը միասին ունեն այնքան ոտք, որքան ոտք ունեն 9 հավ և ...:",
-    image: "https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit,dpr_2/cdn/53154f67-a246-4251-8906-5b50e294e1cb/3da65589-0a00-4446-8e2b-bca1f4524b67.jpg",
-    option1: "3 կատուն",
-    option2: "6 կատուն",
-    option3: "4 կատուն",
-    option4: "2 կատուն",
-    answer: "4 կատուն"
-    }],
+  }],
     test3: [{
       question: "	For her calculus class, Marie has scored 80, 85, and 100 on three of her tests so far. What is the minimum score Marie needs to receive on her 4th test in order to have an average of  89․",
       option1: 98,
@@ -181,6 +181,15 @@ export function App() {
       answer: 91
   },
   {
+    question: "	Ճանճը ունի 6 ոտք, սարդը՝ 8 ոտք:3 ճանճը և 2 սարդը միասին ունեն այնքան ոտք, որքան ոտք ունեն 9 հավ և ...:",
+    image: "https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit,dpr_2/cdn/53154f67-a246-4251-8906-5b50e294e1cb/3da65589-0a00-4446-8e2b-bca1f4524b67.jpg",
+    option1: "3 կատուն",
+    option2: "6 կատուն",
+    option3: "4 կատուն",
+    option4: "2 կատուն",
+    answer: "4 կատուն"
+  },
+  {
       question: " Թիվն ունի երկու թվանշան: Այդ թվանշանների արտադրյալը 15 է: Որքա՞ն է այդ թվանշանների գումարը:",
       option1: 6,
       option2: 7,
@@ -243,16 +252,7 @@ export function App() {
       option3: 2,
       option4: 5,
       answer: 4
-  },
-  {
-    question: "	Ճանճը ունի 6 ոտք, սարդը՝ 8 ոտք:3 ճանճը և 2 սարդը միասին ունեն այնքան ոտք, որքան ոտք ունեն 9 հավ և ...:",
-    image: "https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit,dpr_2/cdn/53154f67-a246-4251-8906-5b50e294e1cb/3da65589-0a00-4446-8e2b-bca1f4524b67.jpg",
-    option1: "3 կատուն",
-    option2: "6 կատուն",
-    option3: "4 կատուն",
-    option4: "2 կատուն",
-    answer: "4 կատուն"
-    }],
+  }],
     test4: [{
       question: "	For her calculus class, Marie has scored 80, 85, and 100 on three of her tests so far. What is the minimum score Marie needs to receive on her 4th test in order to have an average of  89․",
       option1: 98,
@@ -270,6 +270,15 @@ export function App() {
       answer: 8
   },
   {
+    question: "	Ճանճը ունի 6 ոտք, սարդը՝ 8 ոտք:3 ճանճը և 2 սարդը միասին ունեն այնքան ոտք, որքան ոտք ունեն 9 հավ և ...:",
+    image: "https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit,dpr_2/cdn/53154f67-a246-4251-8906-5b50e294e1cb/3da65589-0a00-4446-8e2b-bca1f4524b67.jpg",
+    option1: "3 կատուն",
+    option2: "6 կատուն",
+    option3: "4 կատուն",
+    option4: "2 կատուն",
+    answer: "4 կատուն"
+  },
+  {
       question: "	Մի տոպրակում կա հինգ տարբեր գույների գնդակներ․ երկու կարմիր, երեք կապույտ, տասը սպիտակ, չորս կանաչ և երեք սև։ Գնդակներն առանց նայելու վերցնելու են տոպրակից և ետ չեն դնում։ Առնվազն քանի՞ գնդակ պետք է վերցնել տոպրակից՝ վստահ լինելու համար, որ վերցված գնդակներից երկուսը միևնույն գույնի են։",
       option1: 6,
       option2: 20,
@@ -324,16 +333,7 @@ export function App() {
       option3: 2,
       option4: 5,
       answer: 4
-  },
-  {
-    question: "	Ճանճը ունի 6 ոտք, սարդը՝ 8 ոտք:3 ճանճը և 2 սարդը միասին ունեն այնքան ոտք, որքան ոտք ունեն 9 հավ և ...:",
-    image: "https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit,dpr_2/cdn/53154f67-a246-4251-8906-5b50e294e1cb/3da65589-0a00-4446-8e2b-bca1f4524b67.jpg",
-    option1: "3 կատուն",
-    option2: "6 կատուն",
-    option3: "4 կատուն",
-    option4: "2 կատուն",
-    answer: "4 կատուն"
-    }],
+  }],
     test5: [{
       question: "	For her calculus class, Marie has scored 80, 85, and 100 on three of her tests so far. What is the minimum score Marie needs to receive on her 4th test in order to have an average of  89․",
       option1: 98,
@@ -367,6 +367,15 @@ export function App() {
       answer: 2
   },
   {
+    question: "	Ճանճը ունի 6 ոտք, սարդը՝ 8 ոտք:3 ճանճը և 2 սարդը միասին ունեն այնքան ոտք, որքան ոտք ունեն 9 հավ և ...:",
+    image: "https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit,dpr_2/cdn/53154f67-a246-4251-8906-5b50e294e1cb/3da65589-0a00-4446-8e2b-bca1f4524b67.jpg",
+    option1: "3 կատուն",
+    option2: "6 կատուն",
+    option3: "4 կատուն",
+    option4: "2 կատուն",
+    answer: "4 կատուն"
+  },
+  {
       question: "	Մի շարքում կանգնած են Անին, Դավիթը, Սյուզին, Նարեկը և Արենը: Անին գտնվում է Սյուզիից ձախ, բայց Նարեկից աջ: Նարեկն ու Արենը իրար կողք կանգնած չեն, իսկ Դավիթը չի գտնվում ո՛չ Նարեկի կողքը, ո՛չ Արենի կողքը, ո՛չ էլ Անիի կողքը: Ի՞նչ հերթականությամբ են կանգնած նրանք:",
       option1: "Անի, Նարեկ, Արեն, Դավիթ, Սյուզի",
       option2: "Նարեկ, Անի, Արեն, Սյուզի, Դավիթ",
@@ -405,16 +414,7 @@ export function App() {
       option3: 2,
       option4: 5,
       answer: 4
-  },
-  {
-    question: "	Ճանճը ունի 6 ոտք, սարդը՝ 8 ոտք:3 ճանճը և 2 սարդը միասին ունեն այնքան ոտք, որքան ոտք ունեն 9 հավ և ...:",
-    image: "https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit,dpr_2/cdn/53154f67-a246-4251-8906-5b50e294e1cb/3da65589-0a00-4446-8e2b-bca1f4524b67.jpg",
-    option1: "3 կատուն",
-    option2: "6 կատուն",
-    option3: "4 կատուն",
-    option4: "2 կատուն",
-    answer: "4 կատուն"
-    }]
+  }]
   });
 
   let testsArr = [];
