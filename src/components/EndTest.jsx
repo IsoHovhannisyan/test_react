@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 
-export default function EndTest({trueAnswers, answersResult, questions, ANSWERS}) {
+export default function EndTest({trueAnswers, answersResult, questions, ANSWERS, id}) {
 
     const navigate = useNavigate();
 
@@ -12,7 +12,7 @@ export default function EndTest({trueAnswers, answersResult, questions, ANSWERS}
             <div className=' text-center'>
                 <h1 className=' text-[3rem]'>դուք հավաքել եք {trueAnswers.length}/{answersResult} միավոր </h1> 
                 <div>
-                    <Link to='/users' className=' Link'> Տեսնել բոլորի միավորները</Link>
+                    <Link to={`/users/${id}`} className=' Link'> Տեսնել բոլորի միավորները</Link>
                 </div>
             
             </div>

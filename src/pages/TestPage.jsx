@@ -137,7 +137,7 @@ export function TestPage({Start, setStart, questions, answersResult, trueAnswers
   return (
     <div>
         <Toaster />
-        {end ? <EndTest trueAnswers={trueAnswers} answersResult={answersResult} questions={questions} answers={answers} ANSWERS={ANSWERS}  />
+        {end ? <EndTest trueAnswers={trueAnswers} answersResult={answersResult} questions={questions} answers={answers} ANSWERS={ANSWERS} id={id}  />
         :
         <StartTest time={time} min={min} sec={sec} submitHandler={submitHandler} questions={questions} answers={answers} />}
     </div>

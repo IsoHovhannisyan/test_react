@@ -442,7 +442,7 @@ export function App() {
       <Routes>
         <Route path='/' element={<HomePage Start={Start} setStart={setStart} email={email} setEmail={setEmail} />} />
         <Route path='/test/:id' element={<TestPage  Start={Start} setStart={setStart} questions={questions[0]} trueAnswers={trueAnswers} ANSWERS={ANSWERS} answersResult={answersResult} />} />
-        <Route path='/users' element={< UsersPage />} /> 
+        <Route path='/users/:id' element={< UsersPage />} /> 
       </Routes>
     </div>
     

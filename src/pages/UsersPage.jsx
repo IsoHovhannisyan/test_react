@@ -1,9 +1,14 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom';
 
 export default function UsersPage() {
 
+    const {id} = useParams();
+
     const [users, setUsers] = useState([]);
+    const [lastUser, setLastUser] = useState([]);
+    console.log(lastUser);
     const UsersInOrder = [];
 
 
@@ -12,6 +17,8 @@ export default function UsersPage() {
     const loadingUsers = async()=>{
         let UsersData = await axios.get('https://test-backend-nodejs.vercel.app/user');
         setUsers(UsersData.data);
+        let LastUserData = await axios.get(`https://test-backend-nodejs.vercel.app/user/${id}`);
+        setLastUser(LastUserData.data);
     }
 
 
@@ -35,6 +42,7 @@ export default function UsersPage() {
         <table className=' w-[70%]'>
             <thead>
                 <tr className=' text-[2rem]'>
+                    <th>N</th>
                     <th>Անուն</th>
                     <th>Ազգանուն</th>
                     <th>Հեռախոսահամար</th>
@@ -43,7 +51,8 @@ export default function UsersPage() {
                 </tr>
             </thead>
             <tbody>
-                {UsersInOrder.map(el => <tr className=' text-[1.5rem] text-center' key={el.id}>
+                {UsersInOrder.map((el, index) => <tr className={el.id == lastUser.id ? ' bg-green-400 text-[1.5rem] text-center': 'text-[1.5rem] text-center'} key={el.id}>
+                    <td>{index+1}</td>
                     <td>{el.name}</td>
                     <td>{el.surname}</td>
                     <td>{el.phone}</td>
